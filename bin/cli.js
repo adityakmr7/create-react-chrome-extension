@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 const {execSync} = require('child_process');
+
 const runCommand = command => {
     try {
         execSync(`${command}`, {stdio:'inherit'});
@@ -10,7 +11,7 @@ const runCommand = command => {
     return true
 }
 let defaultRepoName = 'new-project'
-let repoName = process.argv[2] || defaultRepoName;
+let repoName = process.argv[2];
 
 const getCheckoutCommand = `git clone --depth 1 https://github.com/adityakmr7/create-react-chrome-extension ${repoName}`;
 const installDepsCommand = `cd ${repoName} && npm install`;
