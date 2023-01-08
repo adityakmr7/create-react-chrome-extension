@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 const {execSync} = require('child_process');
 const runCommand = command => {
     try {
@@ -11,7 +10,7 @@ const runCommand = command => {
     return true
 }
 let defaultRepoName = 'new-project'
-const repoName = process.argv[2];
+let repoName = process.argv[2];
 if(!repoName) {
     console.log(`Since you did not provide a project name. We are calling it ${defaultRepoName}`);
     repoName = defaultRepoName;
