@@ -1,13 +1,14 @@
 {
-  "name": "react-extension-boilerplate",
+  "name": "@adityakmr7/create-react-chrome-extension",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "bin":"./bin/cli.js",
   "scripts": {
     "start": "webpack --watch --progress --config webpack.dev.js",
     "build": "webpack --watch --progress --config webpack.prod.js"
   },
-  "author": "aditya kumar",
+  "author": "adityakmr7",
   "devDependencies": {
     "@types/chrome": "0.0.128",
     "@types/react": "^17.0.0",
