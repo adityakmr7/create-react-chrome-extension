@@ -10,7 +10,12 @@ const runCommand = command => {
     }
     return true
 }
+let defaultRepoName = 'new-project'
 const repoName = process.argv[2];
+if(!repoName) {
+    console.log(`Since you did not provide a project name. We are calling it ${defaultRepoName}`);
+    repoName = defaultRepoName;
+}
 const getCheckoutCommand = `git clone --depth 1 https://github.com/adityakmr7/create-react-chrome-extension ${repoName}`;
 const installDepsCommand = `cd ${repoName} && npm install`;
 console.log(`Cloning the repository with name ${repoName}`);
@@ -22,4 +27,8 @@ console.log(`Installing dependencies for ${repoName}`)
 const installedDeps = runCommand(installDepsCommand);
 
 if(!installedDeps) process.exec(-1);
-console.log('Congrats!');
+console.info('Congrats! You have successfully created the boilerplate');
+
+console.info(`Run command cd ${repoName}`);
+
+console.info(`Happy Hacking!`)
