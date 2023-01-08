@@ -8,6 +8,10 @@
     "start": "webpack --watch --progress --config webpack.dev.js",
     "build": "webpack --watch --progress --config webpack.prod.js"
   },
+  "repository": {
+    "type": "git",
+    "url":"https://github.com/adityakmr7/create-react-chrome-extension"
+  },
   "author": "adityakmr7",
   "devDependencies": {
     "@types/chrome": "0.0.128",
