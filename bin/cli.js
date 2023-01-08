@@ -10,11 +10,8 @@ const runCommand = command => {
     return true
 }
 let defaultRepoName = 'new-project'
-let repoName = process.argv[2];
-if(!repoName) {
-    console.log(`Since you did not provide a project name. We are calling it ${defaultRepoName}`);
-    repoName = defaultRepoName;
-}
+let repoName = process.argv[2] || defaultRepoName;
+
 const getCheckoutCommand = `git clone --depth 1 https://github.com/adityakmr7/create-react-chrome-extension ${repoName}`;
 const installDepsCommand = `cd ${repoName} && npm install`;
 console.log(`Cloning the repository with name ${repoName}`);
