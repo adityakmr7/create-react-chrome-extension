@@ -1,1 +1,3 @@
-.bin
+dist
+bin
+node_modules
