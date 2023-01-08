@@ -1,9 +1,9 @@
 {
   "name": "@adityakmr7/create-react-chrome-extension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
-  "bin":"./bin/cli.js",
+  "bin": "./bin/cli.js",
   "scripts": {
     "start": "webpack --watch --progress --config webpack.dev.js",
     "build": "webpack --watch --progress --config webpack.prod.js"
