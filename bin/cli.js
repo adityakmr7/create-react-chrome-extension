@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 const {execSync} = require('child_process');
+const {promisify} = require('util');
+const fs = require('fs');
+const path = require('path');
+const rm = promisify(fs.rm);
 const runCommand = command => {
     try {
         execSync(`${command}`, {stdio:'inherit'});
@@ -11,11 +15,17 @@ const runCommand = command => {
 }
 let defaultRepoName = 'new-project'
 let repoName = process.argv[2];
+const currentPath = process.cwd();
+const projectPath = path.join(currentPath, repoName);
 if(!repoName) {
     console.log(`Since you did not provide a project name. We are calling it ${defaultRepoName}`);
     repoName = defaultRepoName;
 }
 const getCheckoutCommand = `git clone --depth 1 https://github.com/adityakmr7/create-react-chrome-extension ${repoName}`;
+const rmGit = rm(path.join(projectPath, ".git"), { recursive: true, force: true });
+// remove the installation file
+const rmBin = rm(path.join(projectPath, "bin"), { recursive: true, force: true });
+await Promise.all([rmGit, rmBin]);
 const installDepsCommand = `cd ${repoName} && npm install`;
 console.log(`Cloning the repository with name ${repoName}`);
 
