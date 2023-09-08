@@ -1,6 +1,6 @@
 {
   "name": "@adityakmr7/create-react-chrome-extension",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "main": "index.js",
   "license": "MIT",
   "bin": "./bin/cli.js",
@@ -12,6 +12,7 @@
     "type": "git",
     "url": "https://github.com/adityakmr7/create-react-chrome-extension"
   },
+  "keywords": ["chrome-extension", "react", "react-chrome-extension"],
   "author": "adityakmr7",
   "devDependencies": {
     "@types/chrome": "0.0.128",
