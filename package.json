@@ -1,6 +1,6 @@
 {
   "name": "@adityakmr7/create-react-chrome-extension",
-  "version": "1.0.14",
+  "version": "1.0.17",
   "main": "index.js",
   "license": "MIT",
   "bin": "./bin/cli.js",
